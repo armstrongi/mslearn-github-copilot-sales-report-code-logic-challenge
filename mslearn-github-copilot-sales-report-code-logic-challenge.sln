@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APL2007M3SalesReport", "APL2007M3SalesReport.csproj", "{E3D68DA3-0DC7-4CDA-1E6B-62A10E8AC098}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3D68DA3-0DC7-4CDA-1E6B-62A10E8AC098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3D68DA3-0DC7-4CDA-1E6B-62A10E8AC098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3D68DA3-0DC7-4CDA-1E6B-62A10E8AC098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3D68DA3-0DC7-4CDA-1E6B-62A10E8AC098}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E543768-E3A5-4490-BBE2-CEE49D23A334}
+	EndGlobalSection
+EndGlobal

@@ -49,16 +49,8 @@
             {
                 salesData[i].dateSold = new DateOnly(2023, random.Next(1, 13), random.Next(1, 29));
                 salesData[i].departmentName = ProdDepartments.departmentNames[random.Next(0, ProdDepartments.departmentNames.Length)];
-
-                int indexOfDept = Array.IndexOf(ProdDepartments.departmentNames, salesData[i].departmentName);
-                string deptAbb = ProdDepartments.departmentAbbreviations[indexOfDept];
-                string firstDigit = (indexOfDept + 1).ToString();
-                string nextTwoDigits = random.Next(1, 100).ToString("D2");
-                string sizeCode = new string[] { "XS", "S", "M", "L", "XL" }[random.Next(0, 5)];
-                string colorCode = new string[] { "BK", "BL", "GR", "RD", "YL", "OR", "WT", "GY" }[random.Next(0, 8)];
-                string manufacturingSite = ManufacturingSites.manufacturingSites[random.Next(0, ManufacturingSites.manufacturingSites.Length)];
-
-                salesData[i].productID = $"{deptAbb}-{firstDigit}{nextTwoDigits}-{sizeCode}-{colorCode}-{manufacturingSite}";
+                
+                salesData[i].productID = ConstructProductID(salesData[i]);
                 salesData[i].quantitySold = random.Next(1, 101);
                 salesData[i].unitPrice = random.Next(25, 300) + random.NextDouble();
                 salesData[i].baseCost = salesData[i].unitPrice * (1 - (random.Next(5, 21) / 100.0));
@@ -69,6 +61,19 @@
             return salesData;
         }
 
+        //Create a method called ContructProductID that takes in a SalesData struct and returns a product ID
+        public string ConstructProductID(SalesData salesData)
+        {
+            int indexOfDept = Array.IndexOf(ProdDepartments.departmentNames, salesData.departmentName);
+            string deptAbb = ProdDepartments.departmentAbbreviations[indexOfDept];
+            string firstDigit = (indexOfDept + 1).ToString();
+            string nextTwoDigits = new Random().Next(1, 100).ToString("D2");
+            string sizeCode = new string[] { "XS", "S", "M", "L", "XL" }[new Random().Next(0, 5)];
+            string colorCode = new string[] { "BK", "BL", "GR", "RD", "YL", "OR", "WT", "GY" }[new Random().Next(0, 8)];
+            string manufacturingSite = ManufacturingSites.manufacturingSites[new Random().Next(0, ManufacturingSites.manufacturingSites.Length)];
+
+            return $"{deptAbb}-{firstDigit}{nextTwoDigits}-{sizeCode}-{colorCode}-{manufacturingSite}";
+        }
 
         public void QuarterlySalesReport(SalesData[] salesData)
         {
@@ -164,8 +169,8 @@
             foreach (KeyValuePair<string, double> quarter in sortedQuarterlySales)
             {
             // format the sales amount as currency using regional settings
-            string formattedSalesAmount = quarter.Value.ToString("C");
-            string formattedProfitAmount = quarterlyProfit[quarter.Key].ToString("C");
+            string formattedSalesAmount = quarter.Value.ToString("C", new System.Globalization.CultureInfo("en-US"));
+            string formattedProfitAmount = quarterlyProfit[quarter.Key].ToString("C", new System.Globalization.CultureInfo("en-US"));
             string formattedProfitPercentage = quarterlyProfitPercentage[quarter.Key].ToString("F2");
 
             Console.WriteLine("{0}: Sales: {1}, Profit: {2}, Profit Percentage: {3}%", quarter.Key, formattedSalesAmount, formattedProfitAmount, formattedProfitPercentage);
@@ -181,8 +186,8 @@
 
             foreach (KeyValuePair<string, double> department in sortedQuarterlySalesByDepartment)
             {
-                string formattedDepartmentSalesAmount = department.Value.ToString("C");
-                string formattedDepartmentProfitAmount = quarterlyProfitByDepartment[quarter.Key][department.Key].ToString("C");
+                string formattedDepartmentSalesAmount = department.Value.ToString("C", new System.Globalization.CultureInfo("en-US"));
+                string formattedDepartmentProfitAmount = quarterlyProfitByDepartment[quarter.Key][department.Key].ToString("C", new System.Globalization.CultureInfo("en-US"));
                 string formattedDepartmentProfitPercentage = quarterlyProfitPercentageByDepartment[quarter.Key][department.Key].ToString("F2");
 
                 Console.WriteLine("│ {0,-22}│ {1,17} │ {2,17} │ {3,17} │", department.Key, formattedDepartmentSalesAmount, formattedDepartmentProfitAmount, formattedDepartmentProfitPercentage);
@@ -206,7 +211,7 @@
                 double orderProfit = orderTotalSales - (salesOrder.quantitySold * salesOrder.baseCost);
                 double orderProfitPercentage = (orderProfit / orderTotalSales) * 100;
 
-                Console.WriteLine("│ {0,-22}│ {1,17} │ {2,17} │ {3,17} │ {4,17} │ {5,17} │", salesOrder.productID, salesOrder.quantitySold, salesOrder.unitPrice.ToString("C"), orderTotalSales.ToString("C"), orderProfit.ToString("C"), orderProfitPercentage.ToString("F2"));
+                Console.WriteLine("│ {0,-22}│ {1,17} │ {2,17} │ {3,17} │ {4,17} │ {5,17} │", salesOrder.productID, salesOrder.quantitySold, salesOrder.unitPrice.ToString("C", new System.Globalization.CultureInfo("en-US")), orderTotalSales.ToString("C", new System.Globalization.CultureInfo("en-US")), orderProfit.ToString("C", new System.Globalization.CultureInfo("en-US")), orderProfitPercentage.ToString("F2"));
             }
 
             Console.WriteLine("└───────────────────────┴───────────────────┴───────────────────┴───────────────────┴───────────────────┴───────────────────┘");

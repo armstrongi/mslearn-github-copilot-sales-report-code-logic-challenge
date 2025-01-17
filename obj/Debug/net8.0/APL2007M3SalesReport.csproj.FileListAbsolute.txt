@@ -1,0 +1,15 @@
+/workspaces/mslearn-github-copilot-sales-report-code-logic-challenge/bin/Debug/net8.0/APL2007M3SalesReport
+/workspaces/mslearn-github-copilot-sales-report-code-logic-challenge/bin/Debug/net8.0/APL2007M3SalesReport.deps.json
+/workspaces/mslearn-github-copilot-sales-report-code-logic-challenge/bin/Debug/net8.0/APL2007M3SalesReport.runtimeconfig.json
+/workspaces/mslearn-github-copilot-sales-report-code-logic-challenge/bin/Debug/net8.0/APL2007M3SalesReport.dll
+/workspaces/mslearn-github-copilot-sales-report-code-logic-challenge/bin/Debug/net8.0/APL2007M3SalesReport.pdb
+/workspaces/mslearn-github-copilot-sales-report-code-logic-challenge/obj/Debug/net8.0/APL2007M3SalesReport.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/mslearn-github-copilot-sales-report-code-logic-challenge/obj/Debug/net8.0/APL2007M3SalesReport.AssemblyInfoInputs.cache
+/workspaces/mslearn-github-copilot-sales-report-code-logic-challenge/obj/Debug/net8.0/APL2007M3SalesReport.AssemblyInfo.cs
+/workspaces/mslearn-github-copilot-sales-report-code-logic-challenge/obj/Debug/net8.0/APL2007M3SalesReport.csproj.CoreCompileInputs.cache
+/workspaces/mslearn-github-copilot-sales-report-code-logic-challenge/obj/Debug/net8.0/APL2007M3SalesReport.sourcelink.json
+/workspaces/mslearn-github-copilot-sales-report-code-logic-challenge/obj/Debug/net8.0/APL2007M3SalesReport.dll
+/workspaces/mslearn-github-copilot-sales-report-code-logic-challenge/obj/Debug/net8.0/refint/APL2007M3SalesReport.dll
+/workspaces/mslearn-github-copilot-sales-report-code-logic-challenge/obj/Debug/net8.0/APL2007M3SalesReport.pdb
+/workspaces/mslearn-github-copilot-sales-report-code-logic-challenge/obj/Debug/net8.0/APL2007M3SalesReport.genruntimeconfig.cache
+/workspaces/mslearn-github-copilot-sales-report-code-logic-challenge/obj/Debug/net8.0/ref/APL2007M3SalesReport.dll
